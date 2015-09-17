@@ -1,0 +1,75 @@
+﻿<section class="mainbar" data-ng-controller="bookEditor as vm">
+    <section class="matter">
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="widget wviolet">
+                    <div data-cc-widget-header title="{{vm.book.title || 'New Book'}}"></div>
+                    <div class="widget-content user">
+                        <h3>Edit Book</h3>
+                        <div class="row">
+                            <div class="span1"></div>
+                            <div class="span4">
+                                <label>Title: <span>*</span></label>
+                                <input data-ng-model="vm.book.title" placeholder="Book Title" required />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="span1"></div>
+                            <div class="span4">
+                                <label>Author: <span>*</span></label>
+                                <input data-ng-model="vm.book.author" placeholder="Author" required />
+                            </div>
+                            <div class="span4">
+                                <label>Price: </label>
+                                <input data-ng-model="vm.book.price" placeholder="Price" required />
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="span1"></div>
+                            <div class="span8">
+                                <button data-ng-click="vm.saveNewBook()" class="btn btn-info"><i class="icon-save"> Save</i></button>
+                                <button data-ng-click="vm.getBook()" class="btn btn-info"><i class="icon-book"> Get </i></button> 
+                                <button data-ng-click="vm.deleteBook()" class="btn btn-info"><i class="icon-book"> Delete </i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-foot">
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row-fluid">
+        <div class="span6">
+            <div class="widget wviolet">
+                <div data-cc-widget-header title="Books"
+                     allow-collapse="true"></div>
+                <div class="widget-content text-center text-info">
+                    <table class="table table-condensed table-striped">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-ng-repeat="p in vm.books">
+                                <td>{{p.title}}</td>
+                                <td>{{p.author}}</td>
+                                <td>${{p.price}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="widget-foot">
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+</section>
